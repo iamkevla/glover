@@ -1,11 +1,16 @@
 {
-  "defaultExtension": "js",
-  "language": {
-    "javascript": {
-      "linting.prefer": "JSHint",
-      "linting.usePreferredOnly": true
-    }
-  },
-  "spaceUnits": 2,
-  "useTabChar": false
+    "defaultExtension": "js",
+    "language": {
+        "javascript": {
+            "linting.prefer": "JSHint",
+            "linting.usePreferredOnly": true
+        }
+    },
+    "spaceUnits": 2,
+    "useTabChar": false,
+    "jscodehints.detectedExclusions": [
+        "/Users/kevlas/Sites/glover/bower_components/bootstrap/js/affix.js",
+        "/Users/kevlas/Sites/glover/bower_components/bootstrap/grunt/bs-raw-files-generator.js",
+        "/Users/kevlas/Sites/glover/bower_components/angular-nvd3/dist/angular-nvd3.min.js"
+    ]
 }
