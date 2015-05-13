@@ -1,30 +1,40 @@
 'use strict';
 
 angular.module('gloverApp')
-  .controller('MyCtrl', ['$scope', 'Upload',
-    function($scope, Upload) {
-      $scope.$watch('files', function() {
-        $scope.upload($scope.files);
-      });
+  .controller('MyCtrl', ['$scope',
+    function($scope) {
 
-      $scope.upload = function(files) {
-        if (files && files.length) {
-          angular.forEach(files, function(file) {
+      $scope.results = {};
 
-            Upload.upload({
-              url: 'https://localhost:3001/upload',
-              fields: {
-                'username': $scope.username
-              },
-              file: file
-            }).progress(function(evt) {
-              var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-              console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-            }).success(function(data, status, headers, config) {
-              console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-            });
-          });
-        }
-      };
+          $scope.options = {
+            chart: {
+                type: 'stackedAreaChart',
+                height: 450,
+                margin : {
+                    top: 20,
+                    right: 20,
+                    bottom: 60,
+                    left: 40
+                },
+                x: function(d){return d[0];},
+                y: function(d){return d[1];},
+                useVoronoi: false,
+                clipEdge: true,
+                transitionDuration: 500,
+                useInteractiveGuideline: true,
+                xAxis: {
+                    showMaxMin: false,
+                    tickFormat: function(d) {
+                        return d3.time.format('%x')(new Date(d));
+                    }
+                },
+                yAxis: {
+                    tickFormat: function(d){
+                        return d3.format(',.2f')(d);
+                    }
+                }
+            }
+        };
+
     }
   ]);

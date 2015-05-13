@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngFileUpload',
-    'nvd3'
+    'nvd3',
+    'LazyModule'
   ])
   .config(function ($routeProvider, $httpProvider) {
     $routeProvider

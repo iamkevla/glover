@@ -36,6 +36,9 @@ module.exports = function(config) {
       'bower_components/d3/d3.js',
       'bower_components/nvd3/nv.d3.js',
       'bower_components/angular-nvd3/dist/angular-nvd3.min.js',
+      'bower_components/lazy.js/lazy.js',
+      'bower_components/flow.js/dist/flow.js',
+      'bower_components/ng-flow/dist/ng-flow.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
